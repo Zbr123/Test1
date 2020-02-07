@@ -6,5 +6,21 @@ pipeline {
                 echo  'Hi, this is ahmed'
          }
         }
-       }
-     }
+        stage ('two') {
+         steps {
+                input ('Do you want to proceed?')
+         }
+        }
+        stage ('Three') {
+         when {
+                not {
+                     branch "master"
+                     }
+                     }
+                 steps {
+                        echo "Hello"
+                        }
+                        }
+         
+       
+     
